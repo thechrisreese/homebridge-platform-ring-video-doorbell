@@ -9,9 +9,9 @@ Run these commands:
 
 
 # Configuration
-Edit `~/.homebridge/config`, inside `"platform": [ ... ]` add:
+Edit `~/.homebridge/config`, inside `"platforms": [ ... ]` add:
 
-    { "accessory" : "ring-video-doorbell"
+    { "platform"  : "ring-video-doorbell"
     , "name"      : "Doorbell"
     , "username"  : "user@example.com"
     , "password"  : ""
