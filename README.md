@@ -22,5 +22,5 @@ Edit `~/.homebridge/config`, inside `"platform": [ ... ]` add:
     }
 
 # Many Thanks
-Many thanks to (jeroenmoors)[https://github.com/jeroenmoors] author of
+Many thanks to [jeroenmoors](https://github.com/jeroenmoors) author of
 [php-ring-api](https://github.com/jeroenmoors/php-ring-api).
