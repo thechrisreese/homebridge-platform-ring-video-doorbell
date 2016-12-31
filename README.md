@@ -1,5 +1,5 @@
 # homebridge-platform-ring-video-doorbell
-A (Ring Video Doorbell)[https://ring.com/] platform plugin for [Homebridge](https://github.com/nfarina/homebridge).
+A [Ring Video Doorbell](https://ring.com/) platform plugin for [Homebridge](https://github.com/nfarina/homebridge).
 
 # Installation
 Run these commands:

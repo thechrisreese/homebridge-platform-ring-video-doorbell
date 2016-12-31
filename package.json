@@ -1,5 +1,5 @@
 { "name"                         : "homebridge-platform-ring-video-doorbell"
-, "version"                      : "0.1.4"
+, "version"                      : "0.1.5"
 , "description"                  : "A Ring Video Doorbell platform plugin for Homebridge: https://github.com/nfarina/homebridge"
 , "main"                         : "index.js"
 , "scripts"                      : { "lint" : "jshint package.json *.js" }
