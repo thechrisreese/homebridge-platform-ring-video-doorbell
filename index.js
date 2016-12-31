@@ -39,7 +39,7 @@ var Ring = function (log, config, api) {
   this.api = api
 
   this.location = this.config.location || url.parse('https://api.ring.com')
-  this.options = underscore.defaults(this.config.options || {}, { ttl: 10, verboseP: false })
+  this.options = underscore.defaults(this.config.options || {}, { ttl: 5, verboseP: false })
 
   this.discoveries = {}
   this.doorbots = {}
@@ -97,7 +97,7 @@ Ring.prototype._addAccessory = function (doorbot) {
 
   doorbot.attachAccessory.bind(doorbot)(accessory)
 
-  self.api.registerPlatformAccessories('homebridge-platform-ring-video-doorbell', 'Ring', [ accessory ])
+  self.api.registerPlatformAccessories('homebridge-platform-ring-video-doorbell', 'ring-video-doorbell', [ accessory ])
   self.log('addAccessory', underscore.pick(doorbot, [ 'uuid', 'name', 'manufacturer', 'model', 'serialNumber' ]))
 }
 
@@ -224,8 +224,7 @@ Ring.prototype._refresh1 = function (callback) {
   var self = this
 
   var headers =
-      { Authorization     : 'Basic bXJvc2UxN0BnbWFpbC5jb206SGJBUmlIM0szY2NNb20oRmlEa2hnTUJueWVIcGdw'
-      , Accept            : '*/*'
+      { Accept            : '*/*'
       , 'User-Agent'      : 'Dalvik/1.6.0 (Linux; U; Android 4.4.4; Build/KTU84Q)'
       }
     , query = '?' + querystring.stringify({ api_version: '9', auth_token: self.profile.authentication_token })
@@ -302,8 +301,7 @@ Ring.prototype._refresh2 = function (callback) {
   var self = this
 
   var headers =
-      { Authorization     : 'Basic bXJvc2UxN0BnbWFpbC5jb206SGJBUmlIM0szY2NNb20oRmlEa2hnTUJueWVIcGdw'
-      , Accept            : '*/*'
+      { Accept            : '*/*'
       , 'User-Agent'      : 'Dalvik/1.6.0 (Linux; U; Android 4.4.4; Build/KTU84Q)'
       }
     , query = '?' + querystring.stringify({ api_version: '9', auth_token: self.profile.authentication_token })

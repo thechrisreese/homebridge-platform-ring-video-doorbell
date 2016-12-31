@@ -16,9 +16,8 @@ Edit `~/.homebridge/config`, inside `"platform": [ ... ]` add:
     , "username"  : "user@example.com"
     , "password"  : ""
 
-    // optional
-    , "cache"     : 10
-    , "options"   : { "verboseP": false }
+    // optional, here are the defaults
+    , "options"   : { "ttl": 5, "verboseP" : false }
     }
 
 # Many Thanks
