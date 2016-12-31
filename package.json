@@ -1,0 +1,22 @@
+{ "name"                         : "homebridge-platform-ring-video-doorbell"
+, "version"                      : "0.1.4"
+, "description"                  : "A Ring Video Doorbell platform plugin for Homebridge: https://github.com/nfarina/homebridge"
+, "main"                         : "index.js"
+, "scripts"                      : { "lint" : "jshint package.json *.js" }
+, "license"                      : "MIT"
+, "keywords"                     : [ "homebridge-plugin", "ring-video-doorbell" ]
+, "repository"                   :
+  { "type"                       : "git"
+  , "url"                        : "git://github.com/homespun/homebridge-platform-ring-video-doorbell.git"
+  }
+, "bugs"                         : { "url": "https://github.com/homespun/homebridge-platform-ring-video-doorbell/issues" }
+, "engines"                      :
+  { "node"                       : ">=0.12.0"
+  , "homebridge"                 : ">=0.4.16"
+  }
+, "dependencies"                 :
+  { "hap-nodejs-community-types" : "https://github.com/homespun/hap-nodejs-community-types.git"
+  , "homespun-discovery"         : "0.1.18"
+  , "underscore"                 : "1.8.3"
+  }
+}
