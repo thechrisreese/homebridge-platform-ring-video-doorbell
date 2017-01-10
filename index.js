@@ -39,7 +39,7 @@ var Ring = function (log, config, api) {
   this.api = api
 
   this.location = this.config.location || url.parse('https://api.ring.com')
-  this.options = underscore.defaults(this.config.options || {}, { ttl: 5, verboseP: false })
+  this.options = underscore.defaults(this.config.options || {}, { ttl: 4, verboseP: false })
 
   this.discoveries = {}
   this.doorbots = {}
@@ -95,10 +95,12 @@ Ring.prototype._addAccessory = function (doorbot) {
     callback()
   })
 
-  doorbot.attachAccessory.bind(doorbot)(accessory)
+  if (doorbot.attachAccessory.bind(doorbot)(accessory)) self.api.updatePlatformAccessories([ accessory ])
 
-  self.api.registerPlatformAccessories('homebridge-platform-ring-video-doorbell', 'ring-video-doorbell', [ accessory ])
-  self.log('addAccessory', underscore.pick(doorbot, [ 'uuid', 'name', 'manufacturer', 'model', 'serialNumber' ]))
+  if (!self.discoveries[accessory.UUID]) {
+    self.api.registerPlatformAccessories('homebridge-platform-ring-video-doorbell', 'ring-video-doorbell', [ accessory ])
+    self.log('addAccessory', underscore.pick(doorbot, [ 'uuid', 'name', 'manufacturer', 'model', 'serialNumber' ]))
+  }
 }
 
 Ring.prototype.configurationRequestHandler = function (context, request, callback) {/* jshint unused: false */
